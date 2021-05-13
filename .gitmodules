@@ -1,0 +1,3 @@
+[submodule "ReactJS"]
+	path = ReactJS
+	url = https://github.com/lucasamacedo/ReactJS.git
