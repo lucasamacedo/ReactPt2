@@ -1,15 +1,17 @@
 import React from 'react';
-import { Component, Fragment } from "react";
+import { Component } from "react";
 import "./App.css";
 import FormularioCadastro from "./components/FormularioCadastro/FormularioCadastro";
+
+import {Container} from "@material-ui/core";
 
 class App extends Component {
   render() {
     return (
-      <Fragment>
-        <h1>Oi</h1>
+      <Container component="article" maxWidth="sm">
+        <h1>Formulário de cadastro</h1>
         <FormularioCadastro />
-      </Fragment>
+      </Container>
     );
   }
 }
