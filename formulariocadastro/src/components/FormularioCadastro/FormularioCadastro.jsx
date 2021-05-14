@@ -1,8 +1,8 @@
-import React from "react";
+import React, {useState} from "react";
 import { Button, TextField, Switch, FormControlLabel } from "@material-ui/core";
 
 function FormularioCadastro() {
-  let nome = "Lucas";
+  const [nome, setNome] = useState("Lucas");
   return (
     <form
       onSubmit={(event) => {
@@ -17,9 +17,9 @@ function FormularioCadastro() {
         variant="outlined"
         margin="normal"
         onChange={(event) => {
-          nome = event.target.value;
-          if(nome.length > 3) {
-            nome = nome.substr(0, 3);
+          setNome(event.target.value);
+          if(nome.length >= 3) {
+            setNome(nome.substr(0, 3));
           }
         }}
         fullWidth
