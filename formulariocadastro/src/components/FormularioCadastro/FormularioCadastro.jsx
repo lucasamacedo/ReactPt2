@@ -4,6 +4,9 @@ import { Button, TextField, Switch, FormControlLabel } from "@material-ui/core";
 function FormularioCadastro() {
   const [nome, setNome] = useState("Lucas");
   const [sobrenome, setSobrenome] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [promocoes, setPromocoes] = useState(true);
+  const [novidades, setNovidades] = useState(true);
 
   return (
     <form
@@ -19,11 +22,7 @@ function FormularioCadastro() {
         margin="normal"
         value={nome}
         onChange={(event) => {
-          let tmpNome = event.target.value;
-          if (tmpNome.length >= 3) {
-            tmpNome = tmpNome.substr(0, 3);
-          }
-          setNome(tmpNome);
+          setNome(event.target.value);
         }}
         fullWidth
       />
@@ -43,15 +42,37 @@ function FormularioCadastro() {
         label="CPF"
         variant="outlined"
         margin="normal"
+        value={cpf}
+        onChange={(event) => {
+          setCpf(event.target.value);
+        }}
         fullWidth
       />
       <FormControlLabel
         label="Promoções"
-        control={<Switch name="promocoes" color="primary" defaultChecked />}
+        control={
+          <Switch
+            checked={promocoes}
+            onChange={(event) => {
+              setPromocoes(event.target.checked);
+            }}
+            name="promocoes"
+            color="primary"
+          />
+        }
       />
       <FormControlLabel
         label="Novidades"
-        control={<Switch name="novidades" color="primary" defaultChecked />}
+        control={
+          <Switch
+            checked={novidades}
+            onChange={(event) => {
+              setNovidades(event.target.checked);
+            }}
+            name="novidades"
+            color="primary"
+          />
+        }
       />
       <Button type="submit" variant="contained" color="primary">
         Cadastrar
