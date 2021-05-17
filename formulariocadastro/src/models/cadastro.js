@@ -14,4 +14,12 @@ function validarCPF(cpf) {
     }
   }
 
-  export {validarCPF, validarSenha};
+  function validarNome(senha) {
+    if(senha.length < 4 || senha.length > 72) {
+      return { valido: false, texto: "Nome deve ser entre 4 e 72 dígitos" };
+    } else {
+      return { valido: true, texto: "" };
+    }
+  }
+
+  export {validarCPF, validarSenha, validarNome};
