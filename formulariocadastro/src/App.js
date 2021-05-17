@@ -20,6 +20,7 @@ class App extends Component {
         >
           <FormularioCadastro aoEnviar={aoEnviarForm} />
         </ValidacoesCadastro.Provider>
+        <FormularioCadastro aoEnviar={aoEnviarForm} />
       </Container>
     );
   }
